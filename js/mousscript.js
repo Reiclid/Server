@@ -29,6 +29,18 @@ if (SP2) {
         window.open('https://modrinth.com/shader/complementary-reimagined', '_blank');
     });
 }
+
+document.getElementById('ipAddress').addEventListener('click', function() {
+    const textToCopy = this.textContent.replace("IP: ", ""); // Отримуємо текст без "IP: "
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert("IP-адреса скопійована в буфер обміну: " + textToCopy);
+    }).catch(err => {
+        console.error('Помилка при копіюванні: ', err);
+    });
+});
+
+
 let currentSection = 1; // Починаємо з другого екрана (Mod)
 const container = document.querySelector('nav');
 const sections = document.querySelectorAll('.section');
