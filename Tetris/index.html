@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="noisy-canvas"></canvas>
+    <div class="circle-main">
+        <div class="circle-main-in"></div>
+    </div>
+    <p class="FPS"> <a href="Tgame.html">0</a></p>
+    <!-- <div class="vinate"></div> -->
+    <header>
+        <div>
+            
+        </div>
+    </header>
+    <main>
+        <div id="navigationr" class=" target">
+            <p>TexturPack</p>
+        </div>
+        <div id="navigationl" class=" target">
+            <p>Instruction</p>
+        </div>
+        <nav>
+            <div class="conteiner">
+                <div class="section Instr">
+                    <div class="box-itemnon ins1">
+                        <div class="box-obj ">
+                            <img src="images/1.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (1):></h1>
+                            <p class="target">Скачайте fabric по цій силці - <a href="https://fabricmc.net/use/installer/" target="_blank">тут</a>.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins2">
+                        <div class="box-obj ">
+                            <img src="images/2.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (2):></h1>
+                            <p class="target">Скачати саме ту версію fabric що на картинці.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins3">
+                        <div class="box-obj ">
+                            <img src="images/3.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (3):></h1>
+                            <p class="target">Вибрати версію модпаку та нажати на неї.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins4">
+                        <div class="box-obj ">
+                            <img src="images/4.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (4):></h1>
+                            <p class="target">Нажати скачати.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins5">
+                        <div class="box-obj ">
+                            <img src="images/5.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (5):></h1>
+                            <p class="target">Розпакувати архів с папкой.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins6">
+                        <div class="box-obj ">
+                            <img src="images/6.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (6):></h1>
+                            <p class="target">Відкриваємо панель віндовс і вводим те що на картинці.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins7">
+                        <div class="box-obj ">
+                            <img src="images/7.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (7):></h1>
+                            <p class="target">Відкриваєм папочку (.minecraft) і перетаскуєм туди папку яку ми скачали з заміною.</p>
+                        </div>
+                    </div>
+                    <div class="box-itemnon ins8">
+                        <div class="box-obj ">
+                            <img src="images/8.png" alt="">
+                        </div>
+                        <div class="box-text ">
+                            <h1><:Instruction - (8):></h1>
+                            <p class="target">Якщо ви з України та ви не можете зайти на сервер то скочайте програму по силці - <a href="https://one.one.one.one/" target="_blank">тут</a> та ввімкніть її.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section Mod">
+                    <div class="box-item target MP1">
+                        <div class="box-obj "></div>
+                        <div class="box-text ">
+                            <p><:Mod Pack - Performance:></p>
+                        </div>
+                    </div>
+                    <div class="box-item target MP2">
+                        <div class="box-obj "></div>
+                        <div class="box-text ">
+                            <p><:Mod Pack - Lite:></p>
+                        </div>
+                    </div>
+                    <div class="box-item target MP3">
+                        <div class="box-obj"></div>
+                        <div class="box-text ">
+                            <p><:Mod Pack - Extreme:></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section Pack">
+                    <div class="box-item target RP1">
+                        <div class="box-obj "></div>
+                        <div class="box-text ">
+                            <p><:Resurs Pack:></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="start">
+            <div class="white-circle"></div>
+            <div class="black-circle">
+                <p class="start_button target">START</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/box.js"></script>
+    <script src="js/mousscript.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/noise.js"></script>
+    <script src="js/netcircle.js"></script>
+    <!-- <script src="js/fpsscript.js"></script> -->
+</body>
