@@ -20,10 +20,15 @@ if (MP3) {
 const RP1 = document.querySelector('.RP1');
 if (RP1) {
     RP1.addEventListener('click', () => {
-        window.open('https://www.planetminecraft.com/texture-pack/ksepsp-v9-optifine-cit/', '_blank');
+        window.open('https://drive.google.com/file/d/1I_oH-Vqcg5TxsEeQ_qjsez1lacYEfDor/view?usp=sharing', '_blank');
     });
 }
-
+const SP2 = document.querySelector('.SP2');
+if (SP2) {
+    SP2.addEventListener('click', () => {
+        window.open('https://modrinth.com/shader/complementary-reimagined', '_blank');
+    });
+}
 let currentSection = 1; // Починаємо з другого екрана (Mod)
 const container = document.querySelector('nav');
 const sections = document.querySelectorAll('.section');
