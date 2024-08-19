@@ -1,0 +1,382 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --color-header: #141414;
+    --circle-size: 5px;
+    --max-scale: 4;
+}
+
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: none;
+}
+
+#noisy-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100; /* Поставте на задній план */
+    pointer-events: none; /* Зробіть його незворушним для взаємодії */
+    opacity: 0.03; /* Налаштуйте прозорість для меншої домінантності */
+    filter: contrast(10);
+}
+p{
+    position: relative;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 100%;
+    /* margin-bottom: 20px; */
+
+}
+h1{
+    position: relative;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+    line-height: 100%;
+    /* margin-bottom: 20px; */
+}
+.hidden {
+    display: none !important;
+}
+
+.circle-main {
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff00;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 1);
+    position: absolute;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    
+}
+.circle-main-in{
+    position: absolute;
+    z-index: 10;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 1);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.FPS{
+    z-index: 10;
+    /* width: 300px; */
+    /* height: 100px; */
+    color: white;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0px;
+    position: relative;
+    /* top: 5px; */
+    left: 10px;
+    opacity: 0.1;
+}
+
+header{
+    position: absolute;
+    top: 10px;
+    /* left: 10px; */
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    margin: 0px;
+    width: 98vw;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--white);
+    opacity: 1;
+    /* filter: blur(10px); */
+    backdrop-filter: blur(10px);
+}
+main {
+    margin: 0px;
+    flex: 1;
+    /* border: 3px solid #ebebeb; */
+}
+.vinate{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset 100px 0 200px -100px rgb(0, 0, 0),
+                inset -100px 0 200px -100px rgb(0, 0, 0);
+}
+#navigationr{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    color: var(--white);
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    /* width: 120px; */
+    border-radius: 0 50px 50px 0;
+    p{
+        margin: 10px 13px 14px 0px;
+    }
+}
+#navigationl{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    color: var(--white);
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    /* width: 120px; */
+    border-radius: 50px 0 0 50px;
+    p{
+        margin: 10px 0px 14px 13px;
+    }
+}
+nav {
+    width: 100vw; /* 3 екрана ширини */
+    /* transition: transform 0.5s ease; */
+    /* display: flex; */
+    /* justify-content: center; */
+    transition: transform 0.5s ease;
+    padding-top: 20px;
+    /* border: solid 5px #ffffff; */
+    
+}
+.conteiner{
+    width: 300vw;
+    transition: transform 0.5s ease;
+    display: flex;
+    /* justify-content: center; */
+}
+.section {
+    width: 100%; /* Ширина кожної секції = ширині екрану */
+    height: 100vh; /* Висота кожної секції = висоті екрану */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* font-size: 5em; */
+    gap: 40px;
+}
+
+
+
+.box-item {
+    display: flex; /* Використовуйте display: flex, а не flexbox */
+    justify-content: center; /* Горизонтальне вирівнювання по центру */
+    align-items: center; /* Вертикальне вирівнювання по центру */
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    margin-top: 10%;
+    background-color: var(--white);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+    flex-direction: column;
+    position: relative;
+    /* z-index: 8; */
+    
+}
+
+.box-obj {
+    z-index: 5;
+    width: 90%;
+    height: 90%;
+    background-color: var(--black);
+    margin-top: 5%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box-obj img {
+    width: 100%; /* Зображення займатиме всю ширину діву */
+    height: 100%; /* Зображення займатиме всю висоту діву */
+    object-fit: cover; /* Масштабує зображення, зберігаючи пропорції */
+}
+
+.box-text {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100px;
+    z-index: 4;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+    /* pointer-events: none; */
+}
+
+.box-text h1 {
+    position: relative;
+    top: 10px;
+    pointer-events: none;
+}
+.box-text p {
+    position: relative;
+    z-index: 100;
+}
+
+
+
+
+.circle{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0.521);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    transition: transform 0.1s ease-out;
+}
+
+.start{
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.black-circle{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+}
+.start_button{
+    z-index: 11;
+    color: var(--white);
+    position: absolute;
+    font-size: 30px;
+    animation: start 3000ms;
+    transform: translateZ(100px);
+}
+@keyframes start{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.white-circle{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.9); /* Світло навколо кола */
+    filter: contrast(200%) brightness(150%) blur(50px);
+    transform: scale(0.5);
+    transition: transform 0.2s ease-out;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px,
+        transparent 2px
+    ), 
+    repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    opacity: 0.7; /* Зменшення видимості для більш натурального вигляду */
+}
+
+.Instr{
+    display: flex;
+    justify-content: space-around;
+    /* align-items: start; */
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: -2%;
+}
+
+.box-itemnon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    margin-top: 10%;
+    background-color: var(--white);
+    flex-direction: column;
+    position: relative;
+    /* z-index: 8; */
+    .box-text {
+        z-index: 1;
+        perspective: 0px;
+        cursor: none;
+    }
+
+}
+
+.ins7{
+    .box-obj {
+        background-position: left center;
+    }
+}
+
